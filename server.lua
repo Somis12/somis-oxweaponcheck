@@ -6,6 +6,9 @@ local function toUnsigned32(n)
     return n
 end
 
+local function isEntityPed(entity)
+    return GetEntityType(entity) == 1
+end
 
 Citizen.CreateThread(function()
     Citizen.Wait(1000) 
@@ -67,3 +70,4 @@ end
         DropPlayer(shooter, "somis detected something weird with your weapon....")
 
 end)
+
