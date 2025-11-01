@@ -55,7 +55,7 @@ if data.weaponType == 2725352035 or data.weaponType == 2741846334 then
     local victimCoords = GetEntityCoords(entity)
     local distance = #(shooterCoords - victimCoords)
     if distance > 5.0 then
-        DropPlayer(shooter, "South menu can suck my big boldy c**k")
+        DropPlayer(shooter, "lol")
         return
     end
 end
@@ -70,4 +70,5 @@ end
         DropPlayer(shooter, "somis detected something weird with your weapon....")
 
 end)
+
 
