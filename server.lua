@@ -42,6 +42,20 @@ AddEventHandler('weaponDamageEvent', function(shooter, data)
     end
     serv_cooldown2[shooter] = now + cooldown_duration2
 end
+if data.weaponType == 2725352035 or data.weaponType == 2741846334 then
+    local entity = NetworkGetEntityFromNetworkId(data.hitGlobalId)
+    local shooterPed = GetPlayerPed(shooter)
+    if not DoesEntityExist(entity) or not isEntityPed(entity) or not IsPedAPlayer(entity) then 
+        return 
+    end
+    local shooterCoords = GetEntityCoords(shooterPed)
+    local victimCoords = GetEntityCoords(entity)
+    local distance = #(shooterCoords - victimCoords)
+    if distance > 5.0 then
+        DropPlayer(shooter, "South menu can suck my big boldy c**k")
+        return
+    end
+end
     local weapon_namos_koskos = GetWeaponNameFromHash(data.weaponType)
     if not weapon_namos_koskos then
         return 
@@ -51,4 +65,5 @@ end
         return 
     end
         DropPlayer(shooter, "somis detected something weird with your weapon....")
+
 end)
